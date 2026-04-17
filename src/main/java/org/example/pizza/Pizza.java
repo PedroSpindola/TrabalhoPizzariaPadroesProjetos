@@ -1,6 +1,6 @@
 package org.example.pizza;
 
-public interface Pizza {
+public abstract class Pizza {
 
-    public float getValuePizza();
+    public abstract float getValuePizza();
 }

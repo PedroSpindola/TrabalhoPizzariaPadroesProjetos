@@ -1,6 +1,6 @@
 package org.example.pizza;
 
-public abstract class PizzaDecorator implements Pizza {
+public abstract class PizzaDecorator extends Pizza {
     private Pizza pizza;
 
     public PizzaDecorator(Pizza pizza){

@@ -2,7 +2,7 @@ package org.example.pizza.size;
 
 import org.example.pizza.Pizza;
 
-public abstract class PizzaSize implements Pizza {
+public abstract class PizzaSize extends Pizza {
 
     protected float value;
 
