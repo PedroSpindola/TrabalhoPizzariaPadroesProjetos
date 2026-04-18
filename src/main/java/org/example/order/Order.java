@@ -1,11 +1,13 @@
 package org.example.order;
 
 import org.example.payment.Payment;
+import org.example.user.UserClients;
 
 public class Order {
 
     private OrderState orderState;
     private Payment payment;
+    private UserClients clients;
 
     public Order(){
         this.orderState = OrderStatePendent.getInstance();
