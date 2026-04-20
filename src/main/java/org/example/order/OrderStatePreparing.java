@@ -16,7 +16,7 @@ public class OrderStatePreparing extends OrderState {
 
     @Override
     public boolean sendOrder(Order order) {
-        order.setOrderState(OrderStateApproved.getInstance());
+        order.setOrderState(OrderStateSend.getInstance());
         return true;
     }
 }
