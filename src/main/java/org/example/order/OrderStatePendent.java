@@ -13,6 +13,7 @@ public class OrderStatePendent extends OrderState {
         order.setOrderState(OrderStateCancel.getInstance());
         return true;
     }
+    @Override
     public boolean processingOrder(Order order) {
         order.setOrderState(OrderStateProcessing.getInstance());
         return true;

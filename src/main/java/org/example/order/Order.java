@@ -19,22 +19,24 @@ public class Order {
     public void setOrderState(OrderState orderState) {
         this.orderState = orderState;
     }
-    public void approvedOrder(){
-        orderState.approvedOrder(this);
+    public boolean approvedOrder(){
+        return orderState.approvedOrder(this);
     }
-    public void cancelOrder(){
-        orderState.cancelOrder(this);
+    public boolean cancelOrder(){
+        return orderState.cancelOrder(this);
     }
-    public void finalizedOrder(){
-        orderState.finalizedOrder(this);
+    public boolean finalizedOrder(){
+        return orderState.finalizedOrder(this);
     }
-    public void pendentOrder(){
-        orderState.pendentOrder(this);
+    public boolean pendentOrder(){
+        return orderState.pendentOrder(this);
     }
-    public void preparingOrder(){
-        orderState.preparingOrder(this);
+    public boolean preparingOrder(){
+        return orderState.preparingOrder(this);
     }
-    public void processingOrder(){
-        orderState.processingOrder(this);
+    public boolean processingOrder(){
+        return orderState.processingOrder(this);
     }
+    public boolean sendOrder(){return orderState.sendOrder(this);}
+
 }

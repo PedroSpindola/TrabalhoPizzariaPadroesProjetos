@@ -11,9 +11,6 @@ public abstract class OrderState {
     public boolean finalizedOrder(Order order) {
         return false;
     }
-    public boolean finishOrder(Order order) {
-        return false;
-    }
     public boolean pendentOrder(Order order) {
         return false;
     }
