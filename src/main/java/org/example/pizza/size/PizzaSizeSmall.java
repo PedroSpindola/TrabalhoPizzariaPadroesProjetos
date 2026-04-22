@@ -2,17 +2,19 @@ package org.example.pizza.size;
 import org.example.pizza.AbstractFactoryInterface.IAbstractPizzaFactory;
 import org.example.pizza.Pizza;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class PizzaSizeSmall extends Pizza
 {
-
-    public PizzaSizeSmall(float value, String name, IAbstractPizzaFactory pizzaFactory)
+    public PizzaSizeSmall(BigDecimal value, IAbstractPizzaFactory pizzaFactory)
     {
-        super(value, name, pizzaFactory);
-
+        super(value, "Small Pizza", pizzaFactory);
     }
 
     @Override
-    public float getValuePizza() {
-        return this.value * 1.2f;
+    public BigDecimal getValuePizza()
+    {
+        return this.value.multiply(new BigDecimal("1.2")).setScale(2, RoundingMode.HALF_UP);
     }
 }

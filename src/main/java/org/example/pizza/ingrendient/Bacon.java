@@ -3,6 +3,8 @@ package org.example.pizza.ingrendient;
 import org.example.pizza.Pizza;
 import org.example.pizza.PizzaDecorator;
 
+import java.math.BigDecimal;
+
 public class Bacon extends PizzaDecorator {
 
     public Bacon(Pizza pizza){
@@ -10,7 +12,8 @@ public class Bacon extends PizzaDecorator {
     }
 
     @Override
-    public float getPercentualAumentoServico() {
-        return 0.10f;
+    public BigDecimal getPercentualAumentoServico()
+    {
+        return new BigDecimal( 0.10);
     }
 }
