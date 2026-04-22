@@ -19,7 +19,7 @@ public class PizzaSizeBigTest {
     {
         IAbstractPizzaFactory pizzaFactory = new NormalPizzaFactory();
         PizzaDecorator pizza = new Oregan(new Chicken(new Cheese(new Bacon(new PizzaSizeBig(new BigDecimal("100.0"), pizzaFactory)))));
-        BigDecimal esperado = new BigDecimal("455.40");
-        assertEquals(0, esperado.compareTo(pizza.getValuePizza()), "The value most be was a expected");
+        BigDecimal expected = new BigDecimal("455.40");
+        assertEquals(0, expected.compareTo(pizza.getValuePizza()), "The value most be was a expected");
     }
 }
