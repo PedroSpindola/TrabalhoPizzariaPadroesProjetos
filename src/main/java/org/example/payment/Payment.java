@@ -5,8 +5,11 @@ import org.example.order.Order;
 
 public abstract class Payment {
 
+    protected IProcessor processor;
+
     private Order order;
     private Checkout checkout;
+    public abstract String pay();
 
     public Checkout getCheckout() {
         return checkout;
@@ -22,5 +25,13 @@ public abstract class Payment {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public void setProcessor(IProcessor processor) {
+        this.processor = processor;
+    }
+
+    public IProcessor getProcessor() {
+        return this.processor;
     }
 }
