@@ -44,11 +44,13 @@ public abstract class Pizza {
         this.name = name;
     }
 
-    public String getDough() {
-        return dough.make();
+    public IDough getDough()
+    {
+        return dough;
     }
 
-    public String getEdge() {
-        return edge.make();
+    public IEdge getEdge()
+    {
+        return edge;
     }
 }
