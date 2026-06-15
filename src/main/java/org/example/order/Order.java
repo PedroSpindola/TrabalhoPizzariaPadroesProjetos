@@ -1,6 +1,7 @@
 package org.example.order;
 
 import org.example.payment.Payment;
+import org.example.service.ServiceNotifier;
 import org.example.user.UserClients;
 
 public class Order {
@@ -38,5 +39,12 @@ public class Order {
         return orderState.processingOrder(this);
     }
     public boolean sendOrder(){return orderState.sendOrder(this);}
+
+    public String notifierAlteracao(){
+        return OrderMediator.getInstance().receberAlteracaoOrder(ServiceNotifier.getInstance(),"Estatos alterado para" +getOrderState());
+    }
+    public String loggerAlteracao(){
+        return OrderMediator.getInstance().receberAlteracaoOrder(ServiceNotifier.getInstance(),"Estado alterado para" +getOrderState());
+    }
 
 }
