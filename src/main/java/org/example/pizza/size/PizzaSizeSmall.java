@@ -13,6 +13,11 @@ public class PizzaSizeSmall extends Pizza
     }
 
     @Override
+    public double getPriceMult() {
+        return 1;
+    }
+
+    @Override
     public BigDecimal getValuePizza()
     {
         return this.value.multiply(new BigDecimal("1.2")).setScale(2, RoundingMode.HALF_UP);

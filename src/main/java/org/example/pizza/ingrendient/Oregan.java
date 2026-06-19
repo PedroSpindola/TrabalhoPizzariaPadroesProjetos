@@ -16,4 +16,9 @@ public class Oregan extends PizzaDecorator {
     {
         return new BigDecimal( 0.5);
     }
+
+    @Override
+    public double getPriceMult() {
+        return 0.1;
+    }
 }

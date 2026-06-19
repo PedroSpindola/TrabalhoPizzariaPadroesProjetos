@@ -16,4 +16,9 @@ public class Bacon extends PizzaDecorator {
     {
         return new BigDecimal( 0.10);
     }
+
+    @Override
+    public double getPriceMult() {
+        return 0.3;
+    }
 }

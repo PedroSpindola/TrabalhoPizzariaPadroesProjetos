@@ -16,4 +16,9 @@ public class Chicken extends PizzaDecorator {
     {
         return new BigDecimal( 0.15);
     }
+
+    @Override
+    public double getPriceMult() {
+        return 0.4;
+    }
 }

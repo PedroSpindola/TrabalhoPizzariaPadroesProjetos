@@ -19,7 +19,7 @@ public abstract class Pizza implements Cloneable {
 
     public Pizza(){}
 
-    protected Pizza(BigDecimal value, String name, IAbstractPizzaFactory pizzaFactory, float baseValue){
+    protected Pizza(BigDecimal value, String name, IAbstractPizzaFactory pizzaFactory){
         this.value = value;
         this.name = name;
         this.dough = pizzaFactory.createDough();

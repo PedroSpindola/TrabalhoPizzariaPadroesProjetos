@@ -16,4 +16,9 @@ public class Cheese extends PizzaDecorator {
     {
         return new BigDecimal( 0.20);
     }
+
+    @Override
+    public double getPriceMult() {
+        return 0.5;
+    }
 }
