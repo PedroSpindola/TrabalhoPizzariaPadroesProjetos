@@ -2,7 +2,14 @@ package org.example.user.methodFactory;
 
 import org.example.user.Users;
 
-public class UserFactory {
+public class UserFactory
+{
+
+    public static UserFactory instance = new UserFactory();
+
+    public static UserFactory getInstance(){
+        return instance;
+    }
 
     public static Users getUser(String user){
         Class classe = null;

@@ -2,6 +2,7 @@ package org.example.payment;
 
 import org.example.checkout.Checkout;
 import org.example.order.Order;
+import org.example.payment.processor.IProcessor;
 
 public abstract class Payment {
 

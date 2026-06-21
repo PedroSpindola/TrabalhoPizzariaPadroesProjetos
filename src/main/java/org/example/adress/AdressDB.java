@@ -1,6 +1,6 @@
 package org.example.adress;
 
-import org.example.user.clients.UserClients;
+import org.example.user.UserClients;
 import org.example.user.Users;
 
 import java.util.ArrayList;

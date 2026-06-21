@@ -1,6 +1,7 @@
 package testUnidade.PaymentBridge;
 
 import org.example.payment.*;
+import org.example.payment.processor.IProcessor;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package org.example.user.clients;
+package org.example.user;
 
 import org.example.departament.TaxDepartament;
 

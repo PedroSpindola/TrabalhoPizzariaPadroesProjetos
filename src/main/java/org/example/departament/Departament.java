@@ -1,6 +1,6 @@
 package org.example.departament;
 
-import org.example.user.clients.UserClients;
+import org.example.user.UserClients;
 
 import java.util.ArrayList;
 import java.util.List;

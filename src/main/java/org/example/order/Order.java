@@ -3,7 +3,7 @@ package org.example.order;
 import org.example.delivery.IDelivery;
 import org.example.payment.Payment;
 import org.example.service.ServiceNotifier;
-import org.example.user.clients.UserClients;
+import org.example.user.UserClients;
 
 import java.util.ArrayList;
 import java.util.List;
