@@ -5,4 +5,8 @@ public class DebitCard extends Payment{
     public String pay() {
         return "Debit Card";
     }
+
+    public DebitCard(){
+        super();
+    }
 }
