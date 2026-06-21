@@ -11,15 +11,15 @@ public class UserEmployerTest
     @Test
     public void shouldReturnClientLoged()
     {
-        Users user = UserFactory.getUser("Employers");
-        assertEquals("Empregador logado", user.logar());
+        Users user = UserFactory.getUser("PizzaEmployer");
+        assertEquals("Empregado Pizza logado", user.logar());
     }
 
     @Test
     public void shouldReturnClientLogout()
     {
-        Users user = UserFactory.getUser("Employers");
-        assertEquals("Empregador Saiu", user.sair());
+        Users user = UserFactory.getUser("PizzaEmployer");
+        assertEquals("Empregador Pizza Saiu", user.sair());
     }
 
 }

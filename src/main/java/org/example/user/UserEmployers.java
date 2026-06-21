@@ -1,13 +1,39 @@
 package org.example.user;
 
-public class UserEmployers extends Users {
+import org.example.tasks.Task;
 
-    @Override
-    public String logar() {
-        return "Empregador logado";
+import java.util.ArrayList;
+
+public abstract class UserEmployers extends Users {
+
+    protected ArrayList taskList = new ArrayList();
+    private UserEmployers nextEmployer;
+
+    public UserEmployers getNextEmployer()
+    {
+        return nextEmployer;
     }
-    @Override
-    public String sair() {
-        return "Empregador Saiu";
+
+    public void setNextEmployer(UserEmployers nextEmployer)
+    {
+        this.nextEmployer = nextEmployer;
     }
+
+    public abstract String getEmployerJob();
+
+    public String executeTask(Task task)
+    {
+        if(taskList.contains(task.getTask())){
+            return getEmployerJob();
+        }
+
+        if(nextEmployer != null){
+            return nextEmployer.executeTask(task);
+        }
+
+        return "No employer with this task";
+    }
+
+
+
 }

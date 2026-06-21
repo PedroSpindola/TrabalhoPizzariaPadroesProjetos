@@ -1,4 +1,4 @@
-package org.example.menu.Task;
+package org.example.tasks;
 
 import org.example.menu.Menu;
 
@@ -20,7 +20,6 @@ public class RemovePizzaToMenuTask implements ITask {
         this.menu = menu;
     }
 
-    @Override
     public String executar(){
         return "Remover menu:" +menu;
     }
