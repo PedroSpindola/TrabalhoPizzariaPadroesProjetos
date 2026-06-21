@@ -1,6 +1,5 @@
 package testUnidade.UserFactory;
 
-import org.example.user.UserClients;
 import org.example.user.Users;
 import org.example.user.methodFactory.UserFactory;
 import org.junit.jupiter.api.BeforeEach;

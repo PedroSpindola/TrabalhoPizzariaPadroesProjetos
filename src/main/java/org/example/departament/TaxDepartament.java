@@ -5,11 +5,11 @@ import org.example.invoice.Invoice;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TaxDepartament {
+public class TaxDepartament extends Departament {
     private static TaxDepartament instance = new TaxDepartament();
     private TaxDepartament(){}
 
-    private static TaxDepartament getInstance(){
+    public static TaxDepartament getInstance(){
         return instance;
     }
     private static Map<Integer, Invoice> invoices = new HashMap<>();

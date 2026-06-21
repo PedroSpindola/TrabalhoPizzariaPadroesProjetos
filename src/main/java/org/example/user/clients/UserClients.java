@@ -1,10 +1,11 @@
-package org.example.user;
+package org.example.user.clients;
 
 import org.example.adress.Adress;
 import org.example.delivery.DefaultDelivery;
 import org.example.delivery.IDelivery;
 import org.example.delivery.PriorityDelivery;
 import org.example.order.Order;
+import org.example.user.Users;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -65,5 +66,8 @@ public class UserClients extends Users implements Observer {
     @Override
     public String sair() {
         return "Cliente Saiu";
+    }
+    public boolean verificarPendencias() {
+        return ClientFacade.verificarPendencias(this);
     }
 }
