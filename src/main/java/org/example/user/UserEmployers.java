@@ -5,6 +5,7 @@ import org.example.tasks.Task;
 import java.util.ArrayList;
 
 public abstract class UserEmployers extends Users {
+    private boolean adm;
 
     protected ArrayList taskList = new ArrayList();
     private UserEmployers nextEmployer;
