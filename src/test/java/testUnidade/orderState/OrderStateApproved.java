@@ -1,19 +1,21 @@
-package testUnidade.order;
+package testUnidade.orderState;
 
-import org.example.order.Order;
-import org.example.order.OrderStateCancel;
+import org.example.order.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class OrderStateFinalized {
+public class OrderStateApproved{
+
     private Order order;
 
     @BeforeEach
     public void setUp(){
         this.order = new Order();
-        order.setOrderState(OrderStateCancel.getInstance());    }
+        order.setOrderState(org.example.order.OrderStateApproved.getInstance());    }
     @Test
     public void deveRetornarFalsoPendent(){
         assertFalse(order.pendentOrder());
@@ -23,12 +25,14 @@ public class OrderStateFinalized {
         assertFalse(order.processingOrder());
     }
     @Test
-    public void deveRetornarFalsaApproved(){
+    public void deveRetornarFalseApproved(){
         assertFalse(order.approvedOrder());
+
     }
     @Test
-    public void deveRetornarFalsoPreparing(){
-        assertFalse(order.preparingOrder());
+    public void deveRetornarTruePreparing(){
+        assertTrue(order.preparingOrder());
+        assertEquals(order.getOrderState(), OrderStatePreparing.getInstance());
     }
     @Test
     public void deveRetornarFalsoSend(){
@@ -39,7 +43,8 @@ public class OrderStateFinalized {
         assertFalse(order.finalizedOrder());
     }
     @Test
-    public void deveRetornarFalsoCancel(){
-        assertFalse(order.cancelOrder());
+    public void deveRetornarTrueCancel(){
+        assertTrue(order.cancelOrder());
+        assertEquals(order.getOrderState(), OrderStateCancel.getInstance());
     }
 }

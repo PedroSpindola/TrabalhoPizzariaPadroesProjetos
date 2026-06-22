@@ -1,30 +1,27 @@
-package testUnidade.order;
+package testUnidade.orderState;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.example.order.*;
-import org.junit.jupiter.api.Test;
-
+import org.example.order.Order;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class OrderStatePendentTest {
-
+public class OrderStateCancelTest {
     private Order order;
 
     @BeforeEach
     public void setUp(){
         this.order = new Order();
-    }
+        order.setOrderState(OrderStateCancel.getInstance());    }
     @Test
     public void deveRetornarFalsoPendent(){
         assertFalse(order.pendentOrder());
     }
     @Test
-    public void deveRetornarTrueProcessing(){
-        assertTrue(order.processingOrder());
-        assertEquals(order.getOrderState(), OrderStateProcessing.getInstance());
+    public void deveRetornarfalseProcessing(){
+        assertFalse(order.processingOrder());
     }
     @Test
-    public void deveRetornarFalsoApproved(){
+    public void deveRetornarFalsaApproved(){
         assertFalse(order.approvedOrder());
     }
     @Test
@@ -40,9 +37,7 @@ public class OrderStatePendentTest {
         assertFalse(order.finalizedOrder());
     }
     @Test
-    public void deveRetornarTrueCancel(){
-        assertTrue(order.cancelOrder());
-        assertEquals(order.getOrderState(), OrderStateCancel.getInstance());
+    public void deveRetornarFalsoCancel(){
+        assertFalse(order.cancelOrder());
     }
-
 }

@@ -12,6 +12,10 @@ public class PizzaSizeBig extends Pizza
         super(value, "Big Pizza", pizzaFactory);
     }
 
+    public PizzaSizeBig(){
+
+    }
+
     @Override
     public double getPriceMult() {
         return 2;
