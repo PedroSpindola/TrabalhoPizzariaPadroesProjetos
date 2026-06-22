@@ -26,6 +26,9 @@ public class InvoiceProxy implements IInvoice{
         if (this.invoice == null) {
             this.invoice = new Invoice(this.id);
         }
+        if (!checkout.isAutorizado()) {
+            throw new IllegalArgumentException("Checkout não autorizado");
+        }
         return this.invoice.obterValores(checkout);
     }
 }

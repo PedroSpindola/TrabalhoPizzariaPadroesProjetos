@@ -10,6 +10,22 @@ public abstract class Users {
     public abstract String logar();
     public abstract String sair();
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
     public String obterUser() {
         return "User{" +
                 "nome='" + this.nome + '\'' +
