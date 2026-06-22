@@ -47,17 +47,15 @@ public class UserClients extends Users implements Observer {
     }
 
 
-    public void fecharPedidoEntregaPadrao() {
+    public void fecharPedidoEntregaPadrao(Order order) {
         IDelivery entregaPadrao = new DefaultDelivery();
-        Order order = new Order();
         order.setDelivery(entregaPadrao);
 
         this.valorTotalUltimaEntrega = order.calcularValorEntrega();
     }
 
-    public void fecharPedidoEntregaPrioritaria() {
+    public void fecharPedidoEntregaPrioritaria(Order order) {
         IDelivery entregaPrioritaria = new PriorityDelivery();
-        Order order = new Order();
         order.setDelivery(entregaPrioritaria);
 
         this.valorTotalUltimaEntrega = order.calcularValorEntrega();
