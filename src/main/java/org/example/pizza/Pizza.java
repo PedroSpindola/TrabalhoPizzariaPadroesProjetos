@@ -90,8 +90,13 @@ public abstract class Pizza implements Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Pizza clone() throws CloneNotSupportedException {
+        Pizza pizzaClone = (Pizza)super.clone();
+        return pizzaClone;
     }
 
+    @Override
+    public String toString() {
+        return "Name:"+ this.name;
+    }
 }
