@@ -2,6 +2,7 @@ package org.example.order;
 
 import org.example.delivery.IDelivery;
 import org.example.payment.Payment;
+import org.example.service.ServiceLogger;
 import org.example.service.ServiceNotifier;
 import org.example.user.UserClients;
 
@@ -80,7 +81,7 @@ public class Order extends Observable {
         return OrderMediator.getInstance().receberAlteracaoOrder(ServiceNotifier.getInstance(),"Estatos alterado para" +getOrderState());
     }
     public String loggerAlteracao(){
-        return OrderMediator.getInstance().receberAlteracaoOrder(ServiceNotifier.getInstance(),"Estado alterado para" +getOrderState());
+        return OrderMediator.getInstance().receberAlteracaoOrder(ServiceLogger.getInstance(),"Estado alterado para" +getOrderState());
     }
 
 }

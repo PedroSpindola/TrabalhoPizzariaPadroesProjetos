@@ -16,6 +16,7 @@ public abstract class Pizza implements Cloneable {
     private IEdge edge;
     private float baseValue;
     protected BigDecimal value;
+    private boolean ativo;
 
     public Pizza(){
         this.baseValue = 0;
@@ -87,6 +88,14 @@ public abstract class Pizza implements Cloneable {
 
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 
     @Override

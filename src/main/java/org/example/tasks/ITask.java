@@ -1,6 +1,5 @@
 package org.example.tasks;
 
-public interface ITask
-{
+public interface ITask {
 
 }

@@ -2,32 +2,33 @@ package org.example.menu;
 
 import org.example.menu.cardapio.Content;
 import org.example.menu.cardapio.IVisitor;
+import org.example.pizza.Pizza;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class Menu implements Iterable<Filter>{
+public abstract class Menu implements Iterable<Pizza>{
     private String nome;
     private String matricula;
     private String categoria;
-    private List<Filter> filter = new ArrayList<Filter>();
+    private List<Pizza> pizza = new ArrayList<Pizza>();
     private Content cardapio;
 
-    public Menu(String nome, String matricula, String categoria, Filter... filter){
+    public Menu(String nome, String matricula, String categoria, Pizza... pizza){
         this.nome = nome;
         this.matricula = matricula;
         this.categoria = categoria;
-        this.filter = Arrays.asList(filter);
+        this.pizza = Arrays.asList(pizza);
     }
 
-    public List<Filter> getFilter() {
-        return filter;
+    public List<Pizza> getPizza() {
+        return pizza;
     }
 
-    public void setFilter(List<Filter> filter) {
-        this.filter = filter;
+    public void setPizza(List<Pizza> pizza) {
+        this.pizza = pizza;
     }
 
     public String getCardapio() {
@@ -64,8 +65,9 @@ public abstract class Menu implements Iterable<Filter>{
     public abstract String aceitar(IVisitor visitor);
 
     @Override
-    public Iterator<Filter> iterator() {
-        return filter.iterator();
+    public Iterator<Pizza> iterator() {
+        return pizza.iterator();
     }
+
 
 }

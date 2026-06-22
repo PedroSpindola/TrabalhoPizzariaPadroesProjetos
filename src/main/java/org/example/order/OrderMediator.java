@@ -13,9 +13,7 @@ public class OrderMediator {
     }
 
     public String receberAlteracaoOrder(IService service, String mensagem) {
-        return "A Ouvidoria agradece seu contato.\n"+
-                "A Secretaria respondeu sua demanda conforme mensagem a seguir.\n" +
-                ">>" + service.avaliarServico(mensagem);
+        return "respondeu sua demanda conforme mensagem a seguir.\n" + ">>" + service.avaliarServico(mensagem);
     }
 
 }
