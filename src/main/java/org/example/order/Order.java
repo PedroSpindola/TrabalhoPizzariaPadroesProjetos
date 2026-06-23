@@ -1,5 +1,6 @@
 package org.example.order;
 
+import org.example.calculator.Pizzaria;
 import org.example.delivery.IDelivery;
 import org.example.payment.Payment;
 import org.example.service.ServiceLogger;
@@ -16,6 +17,9 @@ public class Order extends Observable {
     private Payment payment;
     private UserClients clients;
     private IDelivery delivery;
+    private double precoPizza;
+    private double taxaEntrega;
+    private double descontoCupom;
 
     private ArrayList<OrderState> memento = new ArrayList<OrderState>();
 
@@ -50,6 +54,15 @@ public class Order extends Observable {
     }
     public boolean sendOrder(){return orderState.sendOrder(this);}
 
+    public double getPrecoPizza() { return precoPizza; }
+    public void setPrecoPizza(double precoPizza) { this.precoPizza = precoPizza; }
+
+    public double getTaxaEntrega() { return taxaEntrega; }
+    public void setTaxaEntrega(double taxaEntrega) { this.taxaEntrega = taxaEntrega; }
+
+    public double getDescontoCupom() { return descontoCupom; }
+    public void setDescontoCupom(double descontoCupom) { this.descontoCupom = descontoCupom; }
+
     public void avisarVaga() {
         setChanged();
         notifyObservers();
@@ -82,6 +95,9 @@ public class Order extends Observable {
     }
     public String loggerAlteracao(){
         return OrderMediator.getInstance().receberAlteracaoOrder(ServiceLogger.getInstance(),"Estado alterado para" +getOrderState());
+    }
+    public double calcularTotalPedido() {
+        return Pizzaria.calcularTotalPedido(this.precoPizza, this.taxaEntrega, this.descontoCupom);
     }
 
 }

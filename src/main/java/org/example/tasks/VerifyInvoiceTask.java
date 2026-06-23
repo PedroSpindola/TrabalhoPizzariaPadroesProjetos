@@ -10,4 +10,7 @@ public class VerifyInvoiceTask implements ITask
     {
         return instance;
     }
+
+    @Override
+    public void executar(){}
 }

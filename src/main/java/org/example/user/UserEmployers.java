@@ -8,14 +8,14 @@ public abstract class UserEmployers extends Users {
     private boolean adm;
 
     protected ArrayList taskList = new ArrayList();
-    private UserEmployers nextEmployer;
+    private org.example.user.UserEmployers nextEmployer;
 
-    public UserEmployers getNextEmployer()
+    public org.example.user.UserEmployers getNextEmployer()
     {
         return nextEmployer;
     }
 
-    public void setNextEmployer(UserEmployers nextEmployer)
+    public void setNextEmployer(org.example.user.UserEmployers nextEmployer)
     {
         this.nextEmployer = nextEmployer;
     }
@@ -35,6 +35,5 @@ public abstract class UserEmployers extends Users {
         return "No employer with this task";
     }
 
-
-
 }
+

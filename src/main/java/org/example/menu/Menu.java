@@ -20,7 +20,7 @@ public abstract class Menu implements Iterable<Pizza>{
         this.nome = nome;
         this.matricula = matricula;
         this.categoria = categoria;
-        this.pizza = Arrays.asList(pizza);
+        this.pizza = new ArrayList<>(Arrays.asList(pizza));
     }
 
     public List<Pizza> getPizza() {
@@ -69,5 +69,12 @@ public abstract class Menu implements Iterable<Pizza>{
         return pizza.iterator();
     }
 
+    public void adicionarPizza(Pizza pizza) {
+        this.pizza.add(pizza);
+    }
+
+    public void removerPizza(Pizza pizza) {
+        this.pizza.remove(pizza);
+    }
 
 }

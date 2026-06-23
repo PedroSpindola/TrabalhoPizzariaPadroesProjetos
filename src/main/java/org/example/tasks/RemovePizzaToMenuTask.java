@@ -1,10 +1,13 @@
 package org.example.tasks;
 
 import org.example.menu.Menu;
+import org.example.pizza.Pizza;
 
 public class RemovePizzaToMenuTask implements ITask {
+
     private static RemovePizzaToMenuTask instance = new RemovePizzaToMenuTask();
     private Menu menu;
+    private Pizza pizza;
 
     private RemovePizzaToMenuTask(){}
 
@@ -20,7 +23,16 @@ public class RemovePizzaToMenuTask implements ITask {
         this.menu = menu;
     }
 
-    public String executar(){
-        return "Remover menu:" +menu;
+    public Pizza getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(Pizza pizza) {
+        this.pizza = pizza;
+    }
+
+    @Override
+    public void executar() {
+        menu.removerPizza(pizza);
     }
 }
